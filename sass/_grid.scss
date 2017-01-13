@@ -4,14 +4,10 @@
 
 // Container for each row
 .fx-row {
-  margin-top: -($fx-grid-gutter) + px;
-  margin-left: -($fx-grid-gutter / 2) + px;
-  margin-right: -($fx-grid-gutter / 2) + px;
   display: flex;
   flex-wrap: wrap;
 
   + .fx-row {
-    margin-top: 0;
   }
 }
 

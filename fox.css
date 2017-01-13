@@ -783,6 +783,64 @@ th {
     -ms-flex-item-align: end;
         align-self: flex-end; } }
 
+.fx-items-top-xs {
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.fx-items-center-xs {
+  -ms-flex-align: center;
+      align-items: center; }
+
+.fx-items-bottom-xs {
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.fx-items-baseline-xs {
+  -ms-flex-align: baseline;
+      align-items: baseline; }
+
+@media screen and (min-width: 48em) {
+  .fx-items-top-s {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .fx-items-center-s {
+    -ms-flex-align: center;
+        align-items: center; }
+  .fx-items-bottom-s {
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .fx-items-baseline-s {
+    -ms-flex-align: baseline;
+        align-items: baseline; } }
+
+@media screen and (min-width: 58.75em) {
+  .fx-items-top-m {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .fx-items-center-m {
+    -ms-flex-align: center;
+        align-items: center; }
+  .fx-items-bottom-m {
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .fx-items-baseline-m {
+    -ms-flex-align: baseline;
+        align-items: baseline; } }
+
+@media screen and (min-width: 75em) {
+  .fx-items-top-l {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .fx-items-center-l {
+    -ms-flex-align: center;
+        align-items: center; }
+  .fx-items-bottom-l {
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .fx-items-baseline-l {
+    -ms-flex-align: baseline;
+        align-items: baseline; } }
+
 /*-------------------------*/
 /* +GRID IE9               */
 /*-------------------------*/

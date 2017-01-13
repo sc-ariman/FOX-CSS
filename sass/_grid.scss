@@ -74,7 +74,7 @@
   }
 }
 
-// Align item to the top, center, or bottom
+// Align self to the top, center, or bottom
 @each $position, $value in $fx-col-position {
   .fx-col-#{$position}-xs {
     align-self: $value;
@@ -86,6 +86,23 @@
     @each $position, $value in $fx-col-position {
       .fx-col-#{$position}-#{$breakpoint} {
         align-self: $value;
+      }
+    }
+  }
+}
+
+// Align item to the top, center, or bottom
+@each $position, $value in $fx-items-position {
+  .fx-items-#{$position}-xs {
+    align-items: $value;
+  }
+}
+
+@each $breakpoint, $value in $fx-grid-breakpoints {
+  @include fx-bp($value) {
+    @each $position, $value in $fx-items-position {
+      .fx-items-#{$position}-#{$breakpoint} {
+        align-items: $value;
       }
     }
   }

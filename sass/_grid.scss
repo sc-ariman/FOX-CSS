@@ -11,23 +11,6 @@
   }
 }
 
-// Alignement of items. Use with .fx-row
-@each $position, $value in $fx-row-position {
-  .fx-row-#{$position}-xs {
-    justify-content: $value;
-  }
-}
-
-@each $breakpoint, $value in $fx-grid-breakpoints {
-  @include fx-bp($value) {
-    @each $position, $value in $fx-row-position {
-      .fx-row-#{$position}-#{$breakpoint} {
-        justify-content: $value;
-      }
-    }
-  }
-}
-
 // Reversed row. Use with .fx-row
 .fx-row-reverse-xs {
   flex-direction: row-reverse;
@@ -43,51 +26,78 @@
 
 // Global settings for columns
 [class*="fx-col"] {
-  margin-top: $fx-grid-gutter + px;
-  padding-left: ($fx-grid-gutter / 2) + px;
-  padding-right: ($fx-grid-gutter / 2) + px;
+  // margin-top: $fx-grid-gutter + px;
+  // padding-left: ($fx-grid-gutter / 2) + px;
+  // padding-right: ($fx-grid-gutter / 2) + px;
   flex-grow: 1;
 }
 
 // Different column sizes
 @each $size in $fx-column-sizes {
-	$roundsize: floor($size);
-	.fx-col-#{$roundsize}-xs {
-    flex-basis: $size * 1%;
-    max-width: $size * 1%;
-	}
+  $roundsize: floor($size);
+  .fx-col-#{$roundsize}-xs {
+    @if roundsize == 33 {
+      flex-basis: 33.33333333%;
+      max-width: 33.33333333%;
+    } @else {
+      flex-basis: $size * 1%;
+      max-width: $size * 1%;
+    }
+  }
 }
 
 @each $breakpoint, $value in $fx-grid-breakpoints {
   @include fx-bp($value) {
-  	@each $size in $fx-column-sizes {
-  		$roundsize: floor($size);
-  		.fx-col-#{$roundsize}-#{$breakpoint} {
-        flex-basis: $size * 1%;
-        max-width: $size * 1%;
-  		}
-  	}
+    @each $size in $fx-column-sizes {
+      $roundsize: floor($size);
+      .fx-col-#{$roundsize}-#{$breakpoint} {
+        @if roundsize == 33 {
+          flex-basis: 33.33333333%;
+          max-width: 33.33333333%;
+        } @else {
+          flex-basis: $size * 1%;
+          max-width: $size * 1%;
+        }
+      }
+    }
   }
 }
 
-// Align self to the top, center, or bottom
-@each $position, $value in $fx-col-position {
-  .fx-col-#{$position}-xs {
+// Align self to the start, center , end, baseline , stretch
+@each $position, $value in $fx-self-position {
+  .fx-self-#{$position}-xs {
     align-self: $value;
   }
 }
 
 @each $breakpoint, $value in $fx-grid-breakpoints {
   @include fx-bp($value) {
-    @each $position, $value in $fx-col-position {
-      .fx-col-#{$position}-#{$breakpoint} {
+    @each $position, $value in $fx-self-position {
+      .fx-self-#{$position}-#{$breakpoint} {
         align-self: $value;
       }
     }
   }
 }
 
-// Align item to the top, center, or bottom
+// justify content to the top, center, end, baseline, between, around, evenly, right, left
+@each $position, $value in $fx-just-position {
+  .fx-just-#{$position}-xs {
+    justify-content: $value;
+  }
+}
+
+@each $breakpoint, $value in $fx-grid-breakpoints {
+  @include fx-bp($value) {
+    @each $position, $value in $fx-just-position {
+      .fx-just-#{$position}-#{$breakpoint} {
+        justify-content: $value;
+      }
+    }
+  }
+}
+
+// Align item to the start-start, center, end-end, baseline, stretch
 @each $position, $value in $fx-items-position {
   .fx-items-#{$position}-xs {
     align-items: $value;
